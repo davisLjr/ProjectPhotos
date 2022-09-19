@@ -5,14 +5,14 @@ import image from '../../resources/img/hero.jpg'
 export const Hero = () => {
   return (
     <Box
+      //brightness='1.30'
+      //brightness='70%'
       backgroundImage={`url('${image}')`}
       backgroundPosition="center 50%"
       backgroundRepeat="no-repeat"
       height='815px'
       backgroundSize="cover"
       filter='auto'
-      //brightness='1.30'
-      //brightness='70%'
       marginTop='-75px'
       display='flex'
       justifyContent='space-between'
