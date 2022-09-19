@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/ProjectPhotosPublic/static/css/main.073c9b0a.css",
+    "main.js": "/ProjectPhotosPublic/static/js/main.889f8946.js",
+    "static/js/787.2760cc96.chunk.js": "/ProjectPhotosPublic/static/js/787.2760cc96.chunk.js",
+    "static/media/21.jpg": "/ProjectPhotosPublic/static/media/21.390ab0a0adfb16bc6b62.jpg",
+    "static/media/14.jpg": "/ProjectPhotosPublic/static/media/14.76bdb7a616b40adfc314.jpg",
+    "static/media/12.jpg": "/ProjectPhotosPublic/static/media/12.3eb87c1e6042c0422f30.jpg",
+    "static/media/20.jpg": "/ProjectPhotosPublic/static/media/20.42f2e941bcf7dd22296c.jpg",
+    "static/media/7.jpg": "/ProjectPhotosPublic/static/media/7.0bb2e68146a7ff72bb46.jpg",
+    "static/media/4.jpg": "/ProjectPhotosPublic/static/media/4.4dc3ccfd7f9ed0d3efdd.jpg",
+    "static/media/11.jpg": "/ProjectPhotosPublic/static/media/11.39e119d674310b75a5ae.jpg",
+    "static/media/19.jpg": "/ProjectPhotosPublic/static/media/19.dd85201e5284319cd607.jpg",
+    "static/media/8.jpg": "/ProjectPhotosPublic/static/media/8.4158de745fb5edf77e2b.jpg",
+    "static/media/6.jpg": "/ProjectPhotosPublic/static/media/6.3449ea8718c8491e5b6d.jpg",
+    "static/media/15.jpg": "/ProjectPhotosPublic/static/media/15.1a21ff8fc067b4a222a0.jpg",
+    "static/media/18.jpg": "/ProjectPhotosPublic/static/media/18.85b659b4024b95831a9b.jpg",
+    "static/media/9.jpg": "/ProjectPhotosPublic/static/media/9.8b3149c77aeef4aa4a25.jpg",
+    "static/media/16.jpg": "/ProjectPhotosPublic/static/media/16.21519c3ff9ad9752d8da.jpg",
+    "static/media/3.jpg": "/ProjectPhotosPublic/static/media/3.632b19dec8a873f2dc1d.jpg",
+    "static/media/17.jpg": "/ProjectPhotosPublic/static/media/17.432d6bdd6e7192e6f0a6.jpg",
+    "static/media/5.jpg": "/ProjectPhotosPublic/static/media/5.854c284fffc15b1f18b6.jpg",
+    "static/media/hero.jpg": "/ProjectPhotosPublic/static/media/hero.2f2ae1143f8c9ac773eb.jpg",
+    "static/media/13.jpg": "/ProjectPhotosPublic/static/media/13.37eb6ff4be539974afba.jpg",
+    "static/media/sinbglg.png": "/ProjectPhotosPublic/static/media/sinbglg.2c588e56dec034c3304c.png",
+    "index.html": "/ProjectPhotosPublic/index.html",
+    "main.073c9b0a.css.map": "/ProjectPhotosPublic/static/css/main.073c9b0a.css.map",
+    "main.889f8946.js.map": "/ProjectPhotosPublic/static/js/main.889f8946.js.map",
+    "787.2760cc96.chunk.js.map": "/ProjectPhotosPublic/static/js/787.2760cc96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.889f8946.js"
+  ]
+}
