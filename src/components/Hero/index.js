@@ -20,11 +20,9 @@ export const Hero = () => {
       mb='90px'
     >
       <Box
-        background='base'
+        background='baseTransp'
         height='100%'
         width='100px'
-        borderRight='1px solid'
-        borderColor='white'
       ></Box>
       <Box h='100%'
         display='flex'
@@ -44,8 +42,6 @@ export const Hero = () => {
           MY PROJECT
         </Heading>
         <Box textAlign='end' w={{ base: '100%', md: '80%' }} bg='baseTransp' p=' 10px 25px' alignSelf='end'
-          border='1px solid'
-          borderColor='white'
         >
           <Text color='white' fontWeight='600' maxW='500px'>
             Hola!, me presento.<br /> Soy un Alejandro un fotografo con grandes metas, aca podras ver mis trabajos, y como dicen por ahi
@@ -55,12 +51,12 @@ export const Hero = () => {
           </Text>
         </Box>
         <Box textAlign='end' w='80%' alignSelf='end' mt='20px'>
-          <Button href='#vistazo'
+          <Button 
+            cursor='default'
             color='white'
             p='10px'
             bg='transparent'
-            border='1px solid'
-            borderColor='white'
+            border='1px solid white'
             _hover={{
               borderColor: 'transparent',
             }}
@@ -70,14 +66,11 @@ export const Hero = () => {
         </Box>
       </Box>
       <Box
-        background='base'
+        background='baseTransp'
         height='200px'
         width='200px'
         justifyContent='center'
         alignItems='center'
-        borderLeft='1px solid'
-        borderBottom='1px solid'
-        borderColor='white'
         display={{ base: 'none', md: 'flex' }}
       >
         <Text

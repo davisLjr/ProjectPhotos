@@ -10,7 +10,7 @@ const colors = {
   },
   white:'white',
   base:'#272727',
-  baseTransp:'#272727eb',
+  baseTransp:'#272727bd',
   primary:'#2F9C95',
   secondary:'#40C9A2',
   gold:'#C8AB83',
@@ -120,6 +120,7 @@ const fontSizes = {
   xl: '20px',
   '2xl': '28px',
   '3xl': '34px',
+  '4xl': '36px'
 }
 
 export const theme = extendTheme({ 

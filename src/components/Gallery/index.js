@@ -21,7 +21,7 @@ import Img19 from '../../resources/img/images/19.jpg'
 import Img20 from '../../resources/img/images/20.jpg'
 import Img21 from '../../resources/img/images/21.jpg'
 
-import { CloseIcon } from '@chakra-ui/icons'
+import { ArrowLeftIcon } from '@chakra-ui/icons'
 
 export const Gallery = () => {
 
@@ -112,17 +112,17 @@ export const Gallery = () => {
     scrollMarginTop="60px">
       <Heading 
       color='white'
-      fontSize='3xl'
+      fontSize={{ base:'2xl', md:'3xl' }}
       fontWeight='bold'
-      pl='20px'
+      pl='15px'
       >
       Comenzamos:
       </Heading>
       <Heading
-        fontSize='xl'
+        fontSize={{ base:'lg', md:'xl' }}
         fontWeight='semiBold'
         color='white'
-        pl='20px'
+        pl='15px'
       >
         Un recordatorio para ti, ! La imaginación nos hace infinitos ¡
       </Heading>
@@ -154,17 +154,21 @@ export const Gallery = () => {
         p='20px 0px 20px'
         margin='0 auto'
       />
-      <CloseIcon
+      <ArrowLeftIcon
         position='fixed'
-        top='10px'
-        right='10px'
-        width='2rem'
-        height='2rem'
+        bottom='10px'
+        left={{ base:'10px', md:'2rem' }}
+        width={{ base:'2rem', md:'3rem' }}
+        height={{ base:'2rem', md:'3rem' }}
         padding='5px'
         backgroundColor='rgba(0, 0, 0, 0.4)'
         color='gold'
         cursor='pointer'
         onClick={()=> setModel(false)} 
+        transition='all 250ms ease'
+        _hover={{
+          transform:'translateX(-10px)'
+        }}
       />
     </Box>
       <Grid

@@ -4,7 +4,8 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  IconButton
+  IconButton,
+  Link
 } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import {  MdCameraAlt, MdFolderSpecial } from 'react-icons/md'
@@ -35,13 +36,19 @@ export const HeaderMobile = () => {
       backdropFilter= 'brightness(0.5)'
       >
         <MenuItem icon={<Icon as={MdCameraAlt} />} sx={Styles}>
-          Quien soy 
+          <Link href='#quiensoy'>
+            Quien Soy
+          </Link>
         </MenuItem>
-        <MenuItem icon={<Icon as ={MdFolderSpecial} />} sx={Styles} height= '45px'>
-          Galeria
+        <MenuItem icon={<Icon as ={MdFolderSpecial} />} sx={Styles} height= '45px' >
+          <Link href='#vistazo'>
+            Galeria
+          </Link>
         </MenuItem>
         <MenuItem icon={<CalendarIcon />} sx={Styles} height= '45px'>
-          Servicios
+          <Link href='#servicios'>
+            Servicios
+          </Link>
         </MenuItem>
         <MenuItem icon={<PhoneIcon/>} 
           sx={{
@@ -59,7 +66,9 @@ export const HeaderMobile = () => {
             }
           }} 
           >
-          Contacto
+            <Link href='#contacto'>
+              Contacto
+            </Link>
         </MenuItem>
       </MenuList>
     </Menu>

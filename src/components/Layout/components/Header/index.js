@@ -41,6 +41,7 @@ export const Header = () =>{
             <Box position='relative' p='9px 0px'>
               <Link 
               sx={styles}
+              href='#quiensoy'
               >
                 Quien Soy!
               </Link>
@@ -48,6 +49,7 @@ export const Header = () =>{
             <Box position='relative' p='9px 0px'>
               <Link  
               sx={styles}
+              href='#vistazo'
               >
                 Galeria! 
               </Link>
@@ -55,6 +57,7 @@ export const Header = () =>{
             <Box position='relative' p='9px 0px'>
               <Link 
               sx={styles}
+              href='#servicios'
               >
                 Servicios! 
               </Link>
@@ -66,6 +69,7 @@ export const Header = () =>{
             >
               <Link 
               sx={styles}
+              href='#contacto'
               >
                 Contacto! 
               </Link>
