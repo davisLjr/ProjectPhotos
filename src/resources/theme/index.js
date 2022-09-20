@@ -77,6 +77,7 @@ const Button = {
       border:'1px solid',
       borderColor:'white',
       marginTop:'10px',
+      borderRadius:'0px',
       _hover: {
         borderColor: 'transparent',
       },

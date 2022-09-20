@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Text, Link as Button } from '@chakra-ui/react'
+import { Box, Heading, Text, Button } from '@chakra-ui/react'
 import image from '../../resources/img/hero.jpg'
 
 export const Hero = () => {
@@ -50,16 +50,11 @@ export const Hero = () => {
             </Text>
           </Text>
         </Box>
-        <Box textAlign='end' w='80%' alignSelf='end' mt='20px'>
+        <Box textAlign='end' w='80%' alignSelf='end' >
           <Button 
             cursor='default'
             color='white'
-            p='10px'
-            bg='transparent'
-            border='1px solid white'
-            _hover={{
-              borderColor: 'transparent',
-            }}
+            variant='transp'
           >
             echa un ojo
           </Button>

@@ -3,9 +3,9 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
+  Link as MenuItem,
   IconButton,
-  Link
+ 
 } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import {  MdCameraAlt, MdFolderSpecial } from 'react-icons/md'
@@ -32,25 +32,34 @@ export const HeaderMobile = () => {
           background:'transparent'
         }}
       />
-      <MenuList bg='transparent' w='260px' color='white' 
+      <MenuList bg='transparent' w='260px' 
+      color='white' 
       backdropFilter= 'brightness(0.5)'
+      display='flex'
+      flexDirection='column'
       >
-        <MenuItem icon={<Icon as={MdCameraAlt} />} sx={Styles}>
-          <Link href='#quiensoy'>
-            Quien Soy
-          </Link>
+        <MenuItem  sx={Styles}
+          href='#quiensoy'
+          p='5px 0px 10px'
+          >
+          <Icon as={MdCameraAlt} m='0px 10px' marginBottom='-3px'/>
+          Quien Soy
         </MenuItem>
-        <MenuItem icon={<Icon as ={MdFolderSpecial} />} sx={Styles} height= '45px' >
-          <Link href='#vistazo'>
-            Galeria
-          </Link>
+        <MenuItem sx={Styles} height= '45px' 
+          href='#vistazo'
+          paddingTop='10px'
+        >
+          <Icon as ={MdFolderSpecial} m='0px 10px' marginBottom='-3px'/>
+          Galeria
         </MenuItem>
-        <MenuItem icon={<CalendarIcon />} sx={Styles} height= '45px'>
-          <Link href='#servicios'>
-            Servicios
-          </Link>
+        <MenuItem  sx={Styles} height= '45px'
+          href='#servicios'
+          paddingTop='10px'
+        >
+          <CalendarIcon m='0px 10px'/>
+          Servicios
         </MenuItem>
-        <MenuItem icon={<PhoneIcon/>} 
+        <MenuItem  
           sx={{
             _hover:{
               background:'transparent',
@@ -65,10 +74,11 @@ export const HeaderMobile = () => {
               backdropFilter: 'brightness(0.5)'
             }
           }} 
-          >
-            <Link href='#contacto'>
-              Contacto
-            </Link>
+          href='#contacto'
+          paddingTop='10px'
+        >
+          <PhoneIcon m='0px 10px '/>
+          Contacto
         </MenuItem>
       </MenuList>
     </Menu>
