@@ -34,6 +34,12 @@ import Img20 from '../../resources/img/images/20.jpg'
 import Img20L from '../../resources/img/resize/20.jpg'
 import Img21 from '../../resources/img/images/21.jpg'
 import Img21L from '../../resources/img/resize/21.jpg'
+import Img22 from '../../resources/img/images/22.jpg'
+import Img22L from '../../resources/img/resize/22.jpg'
+import Img23 from '../../resources/img/images/23.jpg'
+import Img23L from '../../resources/img/resize/23.jpg'
+import Img24 from '../../resources/img/resize/orca.jpg'
+import Img24L from '../../resources/img/resize/orca.jpg'
 
 export const data = [
 {
@@ -126,4 +132,20 @@ id: 21,
 imgSrc: Img21L,
 thumbnailSrc: Img21,
 },
+{
+id: 22,
+imgSrc: Img22L,
+thumbnailSrc: Img22,
+},
+{
+id: 23,
+imgSrc: Img23L,
+thumbnailSrc: Img23,
+},
+{
+id: 24,
+imgSrc: Img24L,
+thumbnailSrc: Img24,
+},
+
 ];

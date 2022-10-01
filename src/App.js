@@ -4,6 +4,7 @@ import { Layout } from './components/Layout/layout';
 import { Hero } from './components/Hero'
 import { Gallery } from './components/Gallery'
 import { About } from './components/About'
+import { Mailer } from './components/Form';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Gallery/>
       <Divider w='95%' m='80px auto'/>
       <About/>
+      <Divider w='95%' m='80px auto'/>
+      <Mailer/>
       <Divider w='95%' m='80px auto'/>
     </Layout>
   );

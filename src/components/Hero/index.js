@@ -45,9 +45,9 @@ export const Hero = () => {
         >
           <Text color='white' fontWeight='600' maxW='500px'>
             Hola!, me presento.<br /> Soy un Alejandro un fotografo con grandes metas, aca podras ver mis trabajos, y como dicen por ahi
-            <Text fontStyle='italic'>
-              " Un viaje largo comienza con un solo paso "
-            </Text>
+          </Text>
+          <Text fontStyle='italic'>
+            " Un viaje largo comienza con un solo paso "
           </Text>
         </Box>
         <Box textAlign='end' w='80%' alignSelf='end' >

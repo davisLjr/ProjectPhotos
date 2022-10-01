@@ -83,9 +83,11 @@ export const Gallery = () => {
       <Grid
         templateColumns="repeat(auto-fit, minmax(15rem, 1fr))"
         gap="10px"
-        gridAutoFlow="dense"
+        gridAutoFlow="dense !important"
         gridAutoRows="22rem"
         mt="30px"
+        justifyItems="stretch"
+        overflow='hidden'
       >
         {data.map((item, index) => {
           return (
@@ -99,11 +101,14 @@ export const Gallery = () => {
               }}
               sx={{
                 "&:nth-child(4n)": {
-                  gridColumn: "span 2",
-                  gridRow: "span 2",
+                  gridColumn: {base: "span 2", md:"auto"},
+                  gridRow: {base: "span 2", md:"auto"},
                 },
                 "&:nth-child(2n)": {
-                  gridColumn: { base: "span 1.5", md: "span 2" },
+                  gridColumn: { base: "span 1", md: "span 2" },
+                },
+                "&:nth-child(21n)": {
+                  width:{ base: 'auto', md: '100vw'}
                 },
               }}
               onClick={() => getImg(item.thumbnailSrc)}
