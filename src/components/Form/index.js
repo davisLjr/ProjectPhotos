@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-//import emailjs from "@emailjs/browser";
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import {
   Box,
   FormControl,
@@ -11,11 +11,13 @@ import {
   Select,
   Flex,
   Textarea,
+  useToast
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { v4 as uuidv4 } from "uuid";
+//import { v4 as uuidv4 } from "uuid";
+import { Success } from "./components";
 
 export const Mailer = () => {
   const schema = yup
@@ -29,17 +31,19 @@ export const Mailer = () => {
     .required();
 
   const [isSuccess, setIsSuccess] = useState(true);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSuccess = () => {
+    setIsLoading(false)
     setTimeout(function () {
       setIsSuccess(false);
-    }, 500);
+    }, 800);
   };
-  const onFormSubmit = (data) => {
-    console.log("data", data);
-    localStorage.setItem(`formData-${uuidv4()}`, JSON.stringify(data));
-    handleSuccess();
-  };
+  //const onFormSubmit = (data) => {
+  //  console.log("data", data);
+  //  localStorage.setItem(`formData-${uuidv4()}`, JSON.stringify(data));
+  //  handleSuccess();
+  //};
   const {
     register,
     handleSubmit,
@@ -55,7 +59,38 @@ export const Mailer = () => {
       message: "",
     },
   });
+  //console.log('errors', errors)
+  const toast = useToast()
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    console.log('e', e)
+    setIsLoading(true)
+    emailjs.sendForm('service_u4ry8lv','template_xlstmwl',form.current,'lAbAT3byJtR9pXp5v')
+    .then((result) => {
+      console.log(result.text);
+      toast({
+        title: 'Consulta enviada',
+        description: "tu consulta fue envida con exito, pronto estaran en contacto.",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      })
+      handleSuccess();
+    }, (error) => {
+      console.log(error.text);
+      toast({
+        title: 'No se pudo enviar tu consulta',
+        description: "Hubo un error en el envio de formulario, intenta nuevamente.",
+        status: 'error',
+        duration: 800,
+        isClosable: true,
+      })
+    });
+  }
+  //agregar maxlenght a los inpuut y tamaño de altura al textarea
+//el toast  en lugar de colocarlo en el onclick de button es mejor colocarlo aca en el sendEmail para que cuando se empieza a enviar el evento muestra el cuadro de que si esta llenos los campos, luego si todo sale bien se activa handle success que da como el ok, entonces en ese trayecto de mientras se hace el handlesuccess, coloqué dentro del mismo un isloading antes de que se active el handlesuccess asi se ve que carga antes de que este ok, luego volviendo al send email , si llega a dar error colocamos el toast de error para que se muestre el cuadro rojo. 
   return (
     <>
       {isSuccess ? (
@@ -83,8 +118,9 @@ export const Mailer = () => {
           <form
             className="formulario"
             onSubmit={handleSubmit((data) => {
-              onFormSubmit(data);
+              sendEmail(data);
             })}
+            ref={form}
           >
             <Flex
               justifyContent="space-between"
@@ -92,7 +128,8 @@ export const Mailer = () => {
             >
               <FormControl w={{ base: "100%", md: "45%" }} isRequired>
                 <FormLabel color="lightGold">Nombre</FormLabel>
-                <Input type="text" variant="outline" {...register("name")} />
+                <Input type="text" variant="outline" {...register("name")}
+                />
                 <Text sx={stylesError}>{errors.name?.message}</Text>
               </FormControl>
 
@@ -100,7 +137,7 @@ export const Mailer = () => {
                 <FormLabel color="lightGold" mt={{ base: "15px", md: "0px" }}>
                   Numero de celular
                 </FormLabel>
-                <Input type="number" variant="outline" {...register("phone")} />
+                <Input type="number" variant="outline" {...register("phone")}/>
                 <Text sx={stylesError}>{errors.phone?.message}</Text>
               </FormControl>
             </Flex>
@@ -117,34 +154,34 @@ export const Mailer = () => {
               <FormControl w={{ base: "100%", md: "45%" }} mt="20px" isRequired>
                 <FormLabel color="lightGold">Tipo de Consulta</FormLabel>
                 <Select sx={style} {...register("service")}>
-                  <option value="option1" className="op">
+                  <option value="Publicitaria" className="op">
                     Publicitaria
                   </option>
-                  <option value="option2" className="op">
+                  <option value="Retrato" className="op">
                     Retrato
                   </option>
-                  <option value="option3" className="op">
+                  <option value="Paisajes" className="op">
                     Paisajes
                   </option>
-                  <option value="option4" className="op">
+                  <option value="Abstracta" className="op">
                     Abstracta{" "}
                   </option>
-                  <option value="option5" className="op">
+                  <option value="Deportes" className="op">
                     Deportes{" "}
                   </option>
-                  <option value="option6" className="op">
+                  <option value="Stock" className="op">
                     Stock{" "}
                   </option>
-                  <option value="option7" className="op">
+                  <option value="Alimentos" className="op">
                     Alimentos
                   </option>
-                  <option value="option8" className="op">
+                  <option value="Cumpleaños" className="op">
                     Cumpleaños
                   </option>
-                  <option value="option9" className="op">
+                  <option value="Bodas" className="op">
                     Bodas
                   </option>
-                  <option value="option10" className="op">
+                  <option value="Eventos generales" className="op">
                     Eventos generales
                   </option>
                 </Select>
@@ -159,12 +196,14 @@ export const Mailer = () => {
                 variant="outline"
                 sx={style}
                 {...register("message")}
+                cols='60'
+                rows='20'
               />
               <Text sx={stylesError}> {errors.message?.message}</Text>
             </FormControl>
 
             <Box mt="20px" mb="60px">
-              <Button type="submit" variant="solidPrimary" fontFamily="heading">
+              <Button type="submit" variant="solidPrimary" fontFamily="heading" isLoading={isLoading}>
                 Enviar
               </Button>
             </Box>
@@ -172,7 +211,13 @@ export const Mailer = () => {
         </Box>
       ) : (
         <>
-          <Box setIsSuccess={setIsSuccess}>listo</Box>
+          <Box bg="grayf"
+            p={{ base: "10px", md: "40px" }} 
+            h='400px' 
+            display='flex'
+            >
+              <Success setIsSuccess={setIsSuccess}/>
+          </Box>
         </>
       )}
     </>
